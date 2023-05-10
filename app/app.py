@@ -23,7 +23,7 @@ def extract_text(pdf_file):
 
 # Define function to generate embeddings for text
 def generate_embeddings(text):
-    model_engine = "yuval-dev"  # can also use "davinci" for non-coding tasks
+    model_engine = "dev03"  # can also use "davinci" for non-coding tasks
     prompt = f"summarize the document:\n{text}"
     response = openai.Completion.create(
         engine=model_engine,
@@ -61,7 +61,7 @@ def app():
         question = st.text_input("What would you like to ask?")
         if st.button("Ask"):
             response = openai.Completion.create(
-                engine="yuval-dev",
+                engine="gpt3",
                 prompt = 'f"role":"assistant","content": you are a bot that get doc context and users ask questions on the doc {embeddings} Q: {question} A:',
                 max_tokens=2000,
                 stop=None,
