@@ -41,7 +41,7 @@ securityContext: {}
 
 service:
   port: 80
-  dnsName: chat-with-pdf
+  dnsName: pdf-chat
   type: LoadBalancer
 ingress:
   enabled: false
