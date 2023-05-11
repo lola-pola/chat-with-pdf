@@ -42,7 +42,7 @@ securityContext: {}
 
 service:
   port: 80
-  dnsName: chat-with-gpt
+  dnsName: chat-with-pdf
   type: LoadBalancer
 ingress:
   enabled: false
