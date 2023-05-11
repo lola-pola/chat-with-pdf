@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  #repository: chat-with-pdf
-  repository: nginx
+  repository: chat-with-pdf
+  #repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
