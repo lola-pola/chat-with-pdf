@@ -10,7 +10,7 @@ import os
 # Set up OpenAI API key
 openai.api_type = "azure"
 openai.api_base = "https://aks-production.openai.azure.com/"
-openai.api_version = "2022-12-01"
+openai.api_version = "2023-03-15-preview"
 openai.api_key = os.getenv("KEY_AZURE_AI")
 
 # Define function to extract text from PDF file
