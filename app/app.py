@@ -77,7 +77,8 @@ def app():
 
             # Display answer
             print(question)
-            answer = response.choices[0].text.strip()
+            answer =  str(response['choices'][0]['message']['content'])
+#             answer = response.choices[0].text.strip()
             st.write(f"Answer: {answer}")
 
 
