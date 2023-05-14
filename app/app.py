@@ -62,9 +62,14 @@ def app():
         # Ask a question using OpenAI API and compare against the generated embeddings
         question = st.text_input("What would you like to ask?")
         if st.button("Ask"):
-            response = openai.Completion.create(
+            bot_context = "you are a bot that get doc context and users ask questions on the doc" + str(embeddings)
+            response = openai.ChatCompletion.create(
                 engine="gpt3",
-                prompt = 'f"role":"assistant","content": you are a bot that get doc context and users ask questions on the doc {embeddings} Q: {question} A:',
+                #prompt = 'f"role":"assistant","content": you are a bot that get doc context and users ask questions on the doc {embeddings} Q: {question} A:',
+                messages=[{"role":"system","content":bot_context},
+                  {"role":"user","content":question}
+                  ],
+            
                 max_tokens=2000,
                 stop=None,
                 temperature=1
