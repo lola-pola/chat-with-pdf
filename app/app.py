@@ -25,7 +25,7 @@ def extract_text(pdf_file):
 
 # Define function to generate embeddings for text
 def generate_embeddings(text):
-    model_engine = "dev03"  # can also use "davinci" for non-coding tasks
+    model_engine = "gpt3"  # can also use "davinci" for non-coding tasks
     prompt = f"summarize the document:\n{text}"
     response = openai.Completion.create(
         engine=model_engine,
